@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Crud\Controller\ControllerTrait;
 
-class CategoriesController extends AppController
+class CategoriesController extends ApiController
 {
     use ControllerTrait;
 

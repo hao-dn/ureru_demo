@@ -15,7 +15,6 @@
 namespace App\Controller;
 
 use Cake\Controller\Controller;
-use Cake\Event\Event;
 
 /**
  * Application Controller
@@ -25,7 +24,7 @@ use Cake\Event\Event;
  *
  * @link https://book.cakephp.org/3/en/controllers.html#the-app-controller
  */
-class AppController extends Controller
+class ApiController extends Controller
 {
 
     /**
@@ -45,6 +44,23 @@ class AppController extends Controller
             'enableBeforeRedirect' => false,
         ]);
         $this->loadComponent('Flash');
+        $this->loadComponent('Crud.Crud', [
+            'actions' => [
+                'Crud.Index',
+                'Crud.Add',
+                'Crud.Edit',
+                'Crud.View',
+                'Crud.Delete'
+            ],
+            'listeners' => [
+                'Crud.Api',
+                'Crud.ApiPagination',
+                'Crud.ApiQueryLog',
+            ],
+        ]);
+        $this->Crud->addListener('relatedModels', 'Crud.RelatedModels');
+        $this->Crud->addListener('Crud.Api');
+        $this->Crud->addListener('Crud.ApiQueryLog');
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3/en/controllers/components/security.html

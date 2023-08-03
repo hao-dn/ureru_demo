@@ -52,6 +52,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
+    <?= $this->AssetMix->script('app') ?>
     <footer>
     </footer>
 </body>

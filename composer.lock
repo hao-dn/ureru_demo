@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a4e039038acbb3ed57a7905964eb853",
+    "content-hash": "dc2db59cabad8f6338cbe6ee4056b3f1",
     "packages": [
         {
             "name": "aura/intl",
@@ -411,6 +411,72 @@
                 "wiki": "http://crud.readthedocs.org/en/latest/"
             },
             "time": "2020-06-19T17:23:50+00:00"
+        },
+        {
+            "name": "ishanvyas22/asset-mix",
+            "version": "0.6.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ishanvyas22/asset-mix.git",
+                "reference": "8b457188c4f8dc3738e56ba0acf81e354b77e4f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ishanvyas22/asset-mix/zipball/8b457188c4f8dc3738e56ba0acf81e354b77e4f4",
+                "reference": "8b457188c4f8dc3738e56ba0acf81e354b77e4f4",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": ">=3.5.0 <4.0.0"
+            },
+            "require-dev": {
+                "cakephp/cakephp-codesniffer": "^3.0",
+                "phpstan/phpstan": "^0.12.32",
+                "phpunit/phpunit": "^5.7.14|^6.0"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "AssetMix\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ishan Vyas",
+                    "homepage": "https://github.com/ishanvyas22",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Asset Mix plugin for CakePHP",
+            "homepage": "https://github.com/ishanvyas22/asset-mix",
+            "keywords": [
+                "assets",
+                "cakephp",
+                "cakephp-plugin",
+                "javascript",
+                "laravel-mix",
+                "less",
+                "minifier",
+                "sass"
+            ],
+            "support": {
+                "issues": "https://github.com/ishanvyas22/asset-mix/issues",
+                "source": "https://github.com/ishanvyas22/asset-mix"
+            },
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/ishanvyas",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-08-12T15:07:57+00:00"
         },
         {
             "name": "laminas/laminas-diactoros",

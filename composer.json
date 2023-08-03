@@ -10,6 +10,7 @@
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.3",
         "friendsofcake/crud": "*",
+        "ishanvyas22/asset-mix": "*",
         "mobiledetect/mobiledetectlib": "2.*"
     },
     "require-dev": {
