@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Crud\Controller\ControllerTrait;
 
+// not using ApiController
 //class PostsController extends ApiController
 class PostsController extends AppController
 {
