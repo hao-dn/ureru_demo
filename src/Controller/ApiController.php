@@ -27,6 +27,9 @@ use Cake\Controller\Controller;
 class ApiController extends Controller
 {
 
+    public $components = [
+        'RequestHandler',
+    ];
     /**
      * Initialization hook method.
      *
@@ -67,5 +70,11 @@ class ApiController extends Controller
          * see https://book.cakephp.org/3/en/controllers/components/security.html
          */
         //$this->loadComponent('Security');
+    }
+
+    public function indexX()
+    {
+        /// return layout('default');
+        $this->viewBuilder()->setLayout('vue_layout');
     }
 }

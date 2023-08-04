@@ -8,11 +8,6 @@ class PostsController extends ApiController
 //class PostsController extends AppController
 {
     use ControllerTrait;
-
-    public $components = [
-        'RequestHandler',
-    ];
-
     public $paginate = [
         'limit' => 20,
         'maxLimit' => 100,

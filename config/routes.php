@@ -50,6 +50,9 @@ Router::scope('/api', static function (RouteBuilder $routes) {
     $routes->resources('Categories');
     $routes->resources('Posts');
 });
+Router::scope('/vue', static function (RouteBuilder $routes) {
+    $routes->connect('/*', ['controller' => 'Api', 'action' => 'indexX']);
+});
 Router::scope('/', function (RouteBuilder $routes) {
     // Register scoped middleware for in scopes.
     $routes->registerMiddleware('csrf', new CsrfProtectionMiddleware([

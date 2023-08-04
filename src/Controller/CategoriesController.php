@@ -8,9 +8,6 @@ class CategoriesController extends ApiController
 {
     use ControllerTrait;
 
-    public $components = [
-        'RequestHandler',
-    ];
     public $paginate = [
         'page' => 1,
         'maxLimit' => 100,
