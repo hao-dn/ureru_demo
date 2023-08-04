@@ -14,7 +14,6 @@
                 class="d-flex"
                 width="200">
                 <template slot="header" slot-scope="scope">
-
                     <div style="width: 100%">
                         <span>ID</span>
                     </div>
@@ -28,32 +27,43 @@
             <el-table-column
                 prop="title"
                 label="Title"
+                sortable="custom"
                 width="180">
                 <template slot="header" slot-scope="scope">
-                    Title
+                    <div class="span-cs">Title</div>
                     <el-input
                         v-model="query.title"
+                        class="w75"
                         placeholder="Type to search"/>
+                </template>
+                <template slot-scope="scope">
+                    <router-link :to="{name: 'Post.Edit', params: {id: scope.row.id}}">
+                        {{ scope.row.title }}
+                    </router-link>
                 </template>
             </el-table-column>
             <el-table-column
                 prop="category.name"
                 label="Category"
+                sortable="custom"
                 width="180">
                 <template slot="header" slot-scope="scope">
-                    Category
+                    <span class="span-cs">Category</span>
                     <categories-select
                         v-model="query.category_id"
                         v-on:input="onCategoryChange"
+                        class="w75"
                         placeholder="Type to search"/>
                 </template>
             </el-table-column>
             <el-table-column
+                sortable="custom"
                 prop="content">
                 <template slot="header" slot-scope="scope">
-                    Content
+                    <div class="span-cs">Content</div>
                     <el-input
                         v-model="query.content"
+                        class="w75"
                         placeholder="Type to search"/>
                 </template>
             </el-table-column>
@@ -86,8 +96,8 @@
             layout="sizes, prev, pager, next"
             :total="total">
         </el-pagination>
-        <post-edit :editFormVisible="editFormVisible" :item="editItem" @onClose="onFormClose"
-                   @onUpdateItemSuccess="onItemUpdate"/>
+        <post-edit-modal :editFormVisible="editFormVisible" :item="editItem" @onClose="onFormClose"
+                         @onUpdateItemSuccess="onItemUpdate"/>
     </div>
 </template>
 
@@ -97,12 +107,12 @@ import {postsStore} from "../../stores/posts";
 import {onMounted, ref} from "vue";
 import {providerStore} from "../../stores/provider";
 import {MessageBox} from "element-ui";
-import PostEdit from "./PostEdit.vue";
+import PostEditModal from "./PostEditModal.vue";
 import CategoriesSelect from "../Categories/CategoriesSelect.vue";
 
 export default {
     name: "PostTable",
-    components: {CategoriesSelect, PostEdit},
+    components: {CategoriesSelect, PostEditModal},
     props: {
         query: {
             type: Object,
@@ -230,4 +240,13 @@ export default {
     }
 }
 </script>
+<style lang="css" scoped>
+.span-cs {
+    width: 100%;
+}
+
+.w75 {
+    width: 75%;
+}
+</style>
 

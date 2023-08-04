@@ -1,6 +1,6 @@
 <template>
     <el-dialog
-        :title="'sdsdssdsd'"
+        :title="'Edit: ' + form.title"
         width="50%"
         :visible.sync="this.editFormVisible"
         :before-close="handleClose">
@@ -47,7 +47,7 @@ import {reactive, watch} from "vue";
 import {postsStore} from "../../stores/posts";
 
 export default {
-    name: "PostEdit",
+    name: "PostEditModal",
     components: {CategorySelect},
     props: {
         editFormVisible: {

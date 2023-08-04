@@ -58,6 +58,7 @@ export default {
         watch(() => props.category_id, async (newValue) => {
             valueSelected.value = newValue;
         });
+
         return {
             fetching,
             fetchCategories,

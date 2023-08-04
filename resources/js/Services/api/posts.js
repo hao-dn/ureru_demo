@@ -9,5 +9,8 @@ export default {
     },
     async update2Post(id, data) {
         return await axios.put(`/posts/${id}.json`, data);
+    },
+    async getPost(id) {
+        return await axios.get(`/posts/${id}.json`);
     }
 };

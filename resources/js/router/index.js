@@ -14,11 +14,11 @@ const router = new VueRouter({
             name: 'Posts.List',
             component: () => import('../views/PostsView.vue'),
         },
-        // {
-        //     path: '/posts/:id',
-        //     name: 'Post',
-        //     component: () => import('../views/PostView.vue'),
-        // },
+        {
+            path: '/posts/edit/:id',
+            name: 'Post.Edit',
+            component: () => import('../components/Posts/PostEditView.vue'),
+        },
         {
             path:'/categories',
             name:'Categories.List',
