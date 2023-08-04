@@ -97,7 +97,8 @@ class PostsController extends AppController
         $post = $this->Posts->get($id);
         $this->set([
             'data' => $post,
-            '_serialize' => ['data'],
+            'success' => true,
+            '_serialize' => ['data','success'],
         ]);
     }
 
@@ -111,9 +112,10 @@ class PostsController extends AppController
             $message = 'Error';
         }
         $this->set([
+            'success' => true,
             'message' => $message,
             'data' => $post,
-            '_serialize' => ['message', 'data']
+            '_serialize' => ['message', 'data','success']
         ]);
     }
 
@@ -131,8 +133,9 @@ class PostsController extends AppController
             'message' => $message,
         ]);
         $this->set([
+            'success' => true,
             'data' => $post,
-            '_serialize' => ['message', 'data']
+            '_serialize' => ['message', 'data','success']
         ]);
     }
 
@@ -145,8 +148,9 @@ class PostsController extends AppController
             $message = 'Error';
         }
         $this->set([
+            'success' => true,
             'message' => $message,
-            '_serialize' => ['message']
+            '_serialize' => ['message','success']
         ]);
     }
 }

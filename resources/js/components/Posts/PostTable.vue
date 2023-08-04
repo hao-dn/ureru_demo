@@ -218,6 +218,8 @@ export default {
 
         const onItemUpdate = async () => {
             await fetchPosts();
+            //close form
+            await onFormClose();
         };
         const handleSizeChange = (val) => {
             props.query.limit = val;
