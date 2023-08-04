@@ -124,6 +124,7 @@ import {MessageBox} from "element-ui";
 import PostEditModal from "./PostEditModal.vue";
 import CategoriesSelect from "../Categories/CategoriesSelect.vue";
 import moment from 'moment'
+
 export default {
     name: "PostTable",
     components: {CategoriesSelect, PostEditModal},

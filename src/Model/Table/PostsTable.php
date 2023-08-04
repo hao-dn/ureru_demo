@@ -67,6 +67,10 @@ class PostsTable extends Table
             ->scalar('content')
             ->allowEmptyString('content');
 
+        $validator
+            ->requirePresence('category_id')
+            ->notEmptyString('category_id', 'Please fill this field');
+
         return $validator;
     }
 

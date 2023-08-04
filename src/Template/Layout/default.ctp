@@ -37,7 +37,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <!--    ////sss-->
 </head>
 <body>
-<?= $this->Flash->render() ?>
+<?php //= $this->Flash->render() ?>
 <div class="container clearfix" id="app">
     <?= $this->fetch('content') ?>
 </div>

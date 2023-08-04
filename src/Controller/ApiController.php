@@ -61,6 +61,7 @@ class ApiController extends Controller
         $this->Crud->addListener('relatedModels', 'Crud.RelatedModels');
         $this->Crud->addListener('Crud.Api');
         $this->Crud->addListener('Crud.ApiQueryLog');
+        $this->Crud->setConfig(['listeners.api.exceptionRenderer' => 'App\Error\ExceptionRenderer']);
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3/en/controllers/components/security.html
