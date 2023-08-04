@@ -54,9 +54,10 @@ Vue.component('ValidationProvider', ValidationProvider);
 Vue.use(ElementUI);
 Vue.use(PiniaVuePlugin);
 Vue.component('app-greet', AppGreet);
+Vue.component('app-default', App);
 
 new Vue({
     router,
     pinia: createPinia(),
-    render: (h) => h(App)
+    // render: (h) => h(App)
 }).$mount('#app')

@@ -6,10 +6,10 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         // redirect "/" to "/posts"
-        {
-            path: '/',
-            redirect: '/posts'
-        },
+        // {
+        //     path: '/',
+        //     redirect: '/posts'
+        // },
         {
             path: '/posts',
             name: 'Posts.List',

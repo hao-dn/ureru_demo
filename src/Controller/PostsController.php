@@ -12,6 +12,8 @@ class PostsController extends ApiController
     public $components = [
         'RequestHandler',
     ];
+    public $layout = 'vue_layout';
+
 
     public $paginate = [
         'limit' => 20,
