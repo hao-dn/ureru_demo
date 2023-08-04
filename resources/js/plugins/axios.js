@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'http://app.test/api';
+axios.defaults.baseURL = '/api';
 axios.defaults.headers.common["Accept-Language"] = JSON.parse(localStorage.getItem("locale")) || "en";
 axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
 // axios.interceptors.request.use(

@@ -15,10 +15,10 @@ class CategoriesController extends ApiController
         'page' => 1,
         'maxLimit' => 100,
         'fields' => [
-            'id', 'name', 'description',
+            'id', 'name', 'description','created', 'modified'
         ],
         'sortWhitelist' => [
-            'id', 'name', 'description'
+            'id', 'name', 'description','created', 'modified'
         ],
     ];
 

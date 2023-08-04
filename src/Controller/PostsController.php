@@ -12,21 +12,20 @@ class PostsController extends ApiController
         'RequestHandler',
     ];
     public $paginate = [
-        'page' => 1,
-        'limit' => 5,
+        'limit' => 20,
         'maxLimit' => 100,
         'fields' => [
-            'id', 'title', 'content',
+            'id', 'title', 'content', 'created'
         ],
         'contain' => [
             'Categories' => [
                 'fields' => [
                     'id', 'name'
                 ]
-            ]
+            ],
         ],
         'sortWhitelist' => [
-            'id', 'title', 'content', 'Categories.name'
+            'id', 'title', 'content', 'Categories.name', 'created', 'modified'
         ],
     ];
 

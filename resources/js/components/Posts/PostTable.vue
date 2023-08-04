@@ -68,6 +68,20 @@
                 </template>
             </el-table-column>
             <el-table-column
+                sortable="custom"
+                prop="created">
+                <template slot="header" slot-scope="scope">
+                    <div class="span-cs">Created</div>
+                    <el-input
+                        v-model="query.created"
+                        class="w75"
+                        placeholder="Type to search"/>
+                </template>
+                <template slot-scope="scope">
+                    {{ formatDate(scope.row.created) }}
+                </template>
+            </el-table-column>
+            <el-table-column
                 label="Action"
                 width="300"
                 align="right">
@@ -109,7 +123,7 @@ import {providerStore} from "../../stores/provider";
 import {MessageBox} from "element-ui";
 import PostEditModal from "./PostEditModal.vue";
 import CategoriesSelect from "../Categories/CategoriesSelect.vue";
-
+import moment from 'moment'
 export default {
     name: "PostTable",
     components: {CategoriesSelect, PostEditModal},
@@ -209,6 +223,9 @@ export default {
         // watch(() => props.query, async (newVal, oldVal) => {
         //     await fetchPosts();
         // }, {deep: true});
+        const formatDate = (date,format = 'DD/MM/YYYY HH:mm:ss') => {
+            return moment(date).format(format);
+        }
         return {
             fetching,
             fetchPosts,
@@ -220,7 +237,8 @@ export default {
             onFormClose,
             edit,
             editFormVisible,
-            editItem, sortChange, onCategoryChange
+            editItem, sortChange, onCategoryChange,
+            formatDate
         }
     },
     watch: {
