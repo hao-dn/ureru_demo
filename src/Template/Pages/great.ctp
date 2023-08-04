@@ -47,6 +47,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <h1>Greetings</h1>
     <!-- Load AppGreet component -->
     <app-greet></app-greet>
+    <app-default></app-default>
 </div>
 </body>
 </html>
