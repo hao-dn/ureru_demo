@@ -12,5 +12,8 @@ export default {
     },
     async getPost(id) {
         return await axios.get(`/posts/${id}.json`);
+    },
+    async createPost(data) {
+        return await axios.post("/posts.json", data);
     }
 };

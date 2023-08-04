@@ -20,8 +20,13 @@ const router = new VueRouter({
             component: () => import('../components/Posts/PostEditView.vue'),
         },
         {
-            path:'/categories',
-            name:'Categories.List',
+            path: '/posts/add',
+            name: 'Post.Add',
+            component: () => import('../components/Posts/PostCreateView.vue'),
+        },
+        {
+            path: '/categories',
+            name: 'Categories.List',
             component: () => import('../views/CategoriesView.vue'),
         }
     ]

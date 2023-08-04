@@ -47,26 +47,22 @@ import {providerStore} from "../../stores/provider";
 import CategorySelect from "../Categories/CategoriesSelect.vue";
 import {MessageBox} from "element-ui";
 import {postsStore} from "../../stores/posts";
-import {mapState} from "pinia";
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
+import router   from "../../router";
 
 export default {
-    name: "PostEditView",
+    name: "PostEdit",
     components: {CategorySelect},
     setup() {
         const useProviderStore = providerStore();
         const usePostStore = postsStore();
         const loading = ref(false);
 
-        const fetchPost = async (id) => {
-            loading.value = true;
-            try {
-                await usePostStore.fetchPost(id);
-            } catch (error) {
-                useProviderStore.showErrorAlert(error);
-            }
-            loading.value = false;
-        }
+        const item = ref({
+            title: "",
+            content: "",
+            category_id: "",
+        });
         const onSubmit = (item) => {
             MessageBox.confirm('Are you sure ?', 'Update', {
                 confirmButtonText: 'OK',
@@ -79,19 +75,17 @@ export default {
                     useProviderStore.actionLoader(true);
                     try {
                         const formData = new FormData();
-                        console.log('item')
                         const values = Object.values(item);
                         console.log(values, 'values')
                         for (let i = 0; i < values.length; i++) {
                             formData.append(Object.keys(item)[i], values[i]);
                         }
-                        const id = formData.get('id');
-                        //remove id from form data
-                        formData.delete('id');
-                        const response = await usePostStore.updatePost(id, item);
-                        await fetchPost(id)
-                        const {success, caseCode, message} = response.data ?? [];
+                        const response = await usePostStore.createPost(formData);
+                        //get id from response and push route to post detail
+                        const id = response.data.data.id;
+                        const message = response.data.message;
                         useProviderStore.showSuccessAlert(message);
+                        await router.push('/posts/edit/' + id);
                     } catch (error) {
                         console.log(error, 'error')
                         useProviderStore.showErrorAlert(error);
@@ -103,29 +97,17 @@ export default {
                 });
         };
 
-        //mounted hook get id from route and fetch post
-        onMounted(async function () {
-            const id = this?.$route?.params.id;
-            if (id) {
-                await fetchPost(id);
-            }
-        });
-
         const updateCategory = (value) => {
             alert(value)
-            this.item.category_id = value;
+            item.category_id = value;
         }
         return {
             onSubmit,
             updateCategory,
-            loading
+            loading,
+            item
         };
     },
-    computed: {
-        ...mapState(postsStore, {
-            item: "getPost",
-        })
-    }
 };
 </script>
 <style lang="scss" scoped>

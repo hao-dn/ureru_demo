@@ -38,8 +38,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </head>
 <body>
 <?php //= $this->Flash->render() ?>
-<div class="container clearfix" id="app">
-    <?= $this->fetch('content') ?>
+<!--<div class="container clearfix">-->
+<!--    --><?php //= $this->fetch('content') ?>
+<!--</div>-->
+<div id="app">
+
 </div>
 <div>
 </div>

@@ -30,6 +30,9 @@ export const postsStore = defineStore('posts', {
         async updatePost(id, data) {
             return await PostsService.update2Post(id, data);
         },
+        async createPost(data) {
+            return await PostsService.createPost(data);
+        },
         async fetchPost(id) {
             try {
                 const response = await PostsService.getPost(id);

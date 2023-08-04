@@ -1,5 +1,14 @@
 <template>
     <div>
+        <div class="d-flex justify-content-end">
+            <router-link :to="{name: 'Post.Add'}">
+                <el-button
+                    type="primary"
+                    class="btn btn-pill btn-gradient color-4 admin-btn">
+                    Create
+                </el-button>
+            </router-link>
+        </div>
         <el-table
             v-loading="fetching"
             :data="posts"
