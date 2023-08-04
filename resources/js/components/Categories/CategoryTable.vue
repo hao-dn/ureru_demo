@@ -108,7 +108,7 @@ export default {
                     id: null,
                     page: 1,
                     limit: 5,
-                    title: null,
+                    name: null,
                     content: null,
                     category_id: null,
                     category_name: null,

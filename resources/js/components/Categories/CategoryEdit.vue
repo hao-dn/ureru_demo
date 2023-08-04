@@ -1,9 +1,10 @@
 <template>
     <el-dialog
-        :title="'Edit : ' + ' ' + item?.name"
+        :title="'Edit :'"
         width="50%"
         :visible.sync="this.editFormVisible"
-        :before-close="handleClose">
+        :before-close="handleClose"
+    >
         <ValidationObserver v-slot="{ invalid }">
             <el-form @submit.prevent="onSubmit">
                 <ValidationProvider name="Name" rules="required" v-slot="{ errors }">
@@ -49,7 +50,7 @@ export default {
             default: () => {
                 return {
                     id: null,
-                    title: '',
+                    name: '',
                     content: '',
                     category: null
                 }
