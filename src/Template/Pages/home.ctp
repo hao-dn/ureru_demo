@@ -47,6 +47,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <!--<div id="app">-->
 <!--</div>-->
 <?= $this->Flash->render() ?>
-
+đây là trang home được sử dụng bằng ctp
+click vào đây để chuyển sang vue
+<a href="/posts">click here</a>
 </body>
 </html>
