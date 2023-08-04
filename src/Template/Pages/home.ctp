@@ -43,10 +43,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <?= $this->AssetMix->script('app') ?>
 </head>
 <body class="home">
-
-<div id="app">
-</div>
+<div id="app"></div>
 <?= $this->Flash->render() ?>
-
 </body>
 </html>

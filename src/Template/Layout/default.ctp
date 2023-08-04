@@ -37,13 +37,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <!--    ////sss-->
 </head>
 <body>
-<?php //= $this->Flash->render() ?>
-<!--<div class="container clearfix">-->
-<!--    --><?php //= $this->fetch('content') ?>
-<!--</div>-->
-<div id="app">
-
+<?= $this->Flash->render() ?>
+<div class="container clearfix">
+    <?= $this->fetch('content') ?>
 </div>
+<!--<div id="app">-->
+<!---->
+<!--</div>-->
 <div>
 </div>
 <footer>
