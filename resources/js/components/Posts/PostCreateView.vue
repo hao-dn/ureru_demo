@@ -48,7 +48,7 @@ import CategorySelect from "../Categories/CategoriesSelect.vue";
 import {MessageBox} from "element-ui";
 import {postsStore} from "../../stores/posts";
 import {ref} from "vue";
-import router   from "../../router";
+import router from "../../router";
 
 export default {
     name: "PostEdit",
@@ -85,7 +85,7 @@ export default {
                         const id = response.data.data.id;
                         const message = response.data.message;
                         useProviderStore.showSuccessAlert(message);
-                        await router.push('/posts/edit/' + id);
+                        await router.push('/vue/posts/edit/' + id);
                     } catch (error) {
                         console.log(error, 'error')
                         useProviderStore.showErrorAlert(error);
